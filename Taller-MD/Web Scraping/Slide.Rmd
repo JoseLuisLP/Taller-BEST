@@ -8,14 +8,18 @@ output:
   xaringan::moon_reader:
       css: ["default-fonts","default"]
       nature:
-        highlightStle: github
-        highlighLine: true
-        countIncrementalSlides: true
+        ratio: "16:9"         #Define el tamaño de los slides
+        highlightStle: github #
+        highlighLine: true    #Resalta lineas de código
+        countIncrementalSlides: true 
+        #autoplay: 30000     #Para reproduccion automtica cada 30
+        #countdown: 60000    #Temporizador de 1 min x/pag
     
 ---
 background-image: url(imagen/BEST.png)
-background-size: cover
-
+<!-- background-position: center -->
+background-size: contain 
+<!-- cover -->
 ---
 
 class: center,middle
@@ -42,48 +46,80 @@ class: inverse, center, middle
 
 ---
 # Agenda
+<!-- para presentacones incrementales -->
 --
+.left-column[
+### Día 1
 
 * Motivación
---
-
 * Manos a la Data
---
-
 * Data Science
---
-
 * R y Rstudio
---
-
 * Paquetes necesarios
---
-
 * ¿Qué es web scraping?
---
-
 * Página web, sitio web, y aplicación web
---
-
 * Reto
+]
+--
+.right-column[
+.pull-left[
+
+### Día 2
+* Motivación
+* Manos a la Data
+* Data Science
+* R y Rstudio
+* Paquetes necesarios
+* ¿Qué es web scraping?
+* Página web, sitio web, y aplicación web
+* Reto
+]
+.pull-right[
+
+### Día 3
+* Motivación
+* Manos a la Data
+* Data Science
+* R y Rstudio
+* Paquetes necesarios
+* ¿Qué es web scraping?
+* Página web, sitio web, y aplicación web
+* Reto
+]
+]
 
 ---
 class: inverse, center
+
 # Motivación
  
  .center["No se puede elegir sabiamente una vida a menos que se atrava uno a escucharse a sí mismo a *su propio yo*, en cada momento de la vida. **ABRAHAM H. MASLOW** [The farther Reaches of Human Nature, 1971].]
 
 .pull-left[
-![](https://1.bp.blogspot.com/-EBTx-M7hLLg/X3UFZzk3_8I/AAAAAAAAAZY/_c86m_XTjWgUG-NyIcsP6mUIqpV7YLOwgCNcBGAsYHQ/s0/images.png)
+
+```{r Intrin,echo=FALSE,cache=FALSE,out.height="400px",out.width="550px",fig.cap="Fuente: Imagen 1"}
+
+# url
+knitr::include_graphics("https://1.bp.blogspot.com/-EBTx-M7hLLg/X3UFZzk3_8I/AAAAAAAAAZY/_c86m_XTjWgUG-NyIcsP6mUIqpV7YLOwgCNcBGAsYHQ/s0/images.png")
+
+```
+
+<!-- ![](https://1.bp.blogspot.com/-EBTx-M7hLLg/X3UFZzk3_8I/AAAAAAAAAZY/_c86m_XTjWgUG-NyIcsP6mUIqpV7YLOwgCNcBGAsYHQ/s0/images.png) -->
 ]
 
 .pull-right[
-![](imagen/MExtrinseca.png)
+```{r Extrin, echo=FALSE,cache=FALSE,out.height="400px", out.width="550px",fig.cap="Fuente: Imagen 2"}
+# local
+knitr::include_graphics("imagen/MExtrinseca.png")
+```
+
+<!-- ![](imagen/MExtrinseca.png) -->
 ]
 
 ---
-class: center, bottom, inverse
-```{r Gtrends,eval=FALSE,echo=FALSE,cache=FALSE,message=FALSE,warning=FALSE,out.height="550px", out.width="750px"}
+class: center, middle, bottom, inverse
+```{r Gtrends,eval=FALSE,echo=FALSE,cache=FALSE,message=FALSE,warning=FALSE,out.height="550px", out.width="1050px"} 
+#Para que no lo descarge: eval=FLASE
 library(tidyverse) #Conjunto de paquetes - 8
 library(plotly)
 library(gtrendsR) #para bajar información de google trends
@@ -126,19 +162,41 @@ enseñar.
 + ¡Recuerden que también es importante ofrecer créditos!
 
 ---
+class: top
 # ¿Qué es Data Science?
 
 .pull-left[Data science is a set of fundamental principles that support and guide the principled extraction of information and knowledge from data. Possibly the most closely related concept to data science is data mining—the actual extraction of knowledge from data via technologies that incorporate these principles. There are hundreds of different data-mining algorithms, and a great deal of detail to the methods of the field. We argue that underlying all these many details is a much smaller and more concise set of fundamental principles [Van Der Aalst, W.](https://www.liebertpub.com/doi/full/10.1089/big.2013.1508) (2016). *Data science in action*. In Process mining (pp. 3-23). Springer, Berlin, Heidelberg.]
- 
-.pull-right[![Ciencia de datos en el contexto de procesos estrechamente relacionados en la organización.](https://www.liebertpub.com/cms/10.1089/big.2013.1508/asset/images/medium/figure1.gif)]
+
+--
+
+.pull-right[ 
+```{r img3, echo=FALSE,cache=FALSE,out.height="450px",out.width="550px",fig.cap="Ciencia de datos en el contexto de procesos estrechamente relacionados en la organización"}
+# url
+knitr::include_graphics("https://www.liebertpub.com/cms/10.1089/big.2013.1508/asset/images/medium/figure1.gif")
+```
+]
 ---
 class: inverse, bottom, center, middle
 # ¿Ciencia de datos la profesión más sexy del siglo XXI?
-.pull-left[![](imagen/DSexyGlobalPais.png) ![](imagen/DSexyMundoContacto.png)]
 
-.pull-right[![](imagen/DSexyEconomista.png) ![](imagen/DSexyInfobae.png)]
+.pull-left[
+```{r Sexy1, echo=FALSE,cache=FALSE,out.height="200px", out.width="550px"}
+# local
+knitr::include_graphics("imagen/DSexyGlobalPais.png")
+knitr::include_graphics("imagen/DSexyMundoContacto.png")
+```
+]
+--
+.pull-right[
+```{r Sexy2,echo=FALSE,cache=FALSE,out.height="200px", out.width="550px"}
+# local
+knitr::include_graphics("imagen/DSexyEconomista.png")
+knitr::include_graphics("imagen/DSexyInfobae.png")
+```
+]
 
 ---
+class: center, middle
 # ¿Ciencia de datos la profesión más sexy del siglo XXI?
 
 
@@ -150,13 +208,15 @@ options(htmltools.dir.version = FALSE)
 <iframe width="741" height="417" src="https://www.youtube.com/embed/AaoM5XhdnG0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
-class: inverse, center, middle
+class: center, middle
 ```{r Skills, echo=FALSE,fig.align='center', out.height="520px", out.width="750px"}
 knitr::include_graphics("https://cdn.proschoolonline.com/wp-content/uploads/2018/12/data-scientist-musthave-skills-1-1500x1139.jpg")
 ```
- 
+.footnote[
+Fuente: [Proschool](https://www.proschoolonline.com/blog/data-science-skills)
+]
 ##   ¿Qué habilidades debe tener un científico de datos?
-[Fuente: Proschool](https://www.proschoolonline.com/blog/data-science-skills)
+
 ---
 class: center, middle
 ```{r BEST, echo=TRUE,fig.align='center', out.height="250px", out.width="500px"}
@@ -273,11 +333,7 @@ knitr::kable(head(iris), format = 'html')
 
 ---
 
-# HTML Widgets
-
-I have not thoroughly tested HTML widgets against **xaringan**. Some may work well, and some may not. It is a little tricky.
-
-Similarly, the Shiny mode (`runtime: shiny`) does not work. I might get these issues fixed in the future, but these are not of high priority to me. I never turn my presentation into a Shiny app. When I need to demonstrate more complicated examples, I just launch them separately. It is convenient to share slides with other people when they are plain HTML/JS applications.
+#     
 
 See the next page for two HTML widgets.
 

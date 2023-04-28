@@ -4,25 +4,25 @@
     <title>Web scraping con R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jose Laura" />
-    <script src="ExamplePresentation_files/header-attrs/header-attrs.js"></script>
-    <link href="ExamplePresentation_files/remark-css/default-fonts.css" rel="stylesheet" />
-    <link href="ExamplePresentation_files/remark-css/default.css" rel="stylesheet" />
-    <script src="ExamplePresentation_files/htmlwidgets/htmlwidgets.js"></script>
-    <script src="ExamplePresentation_files/jquery/jquery.min.js"></script>
-    <link href="ExamplePresentation_files/leaflet/leaflet.css" rel="stylesheet" />
-    <script src="ExamplePresentation_files/leaflet/leaflet.js"></script>
-    <link href="ExamplePresentation_files/leafletfix/leafletfix.css" rel="stylesheet" />
-    <script src="ExamplePresentation_files/proj4/proj4.min.js"></script>
-    <script src="ExamplePresentation_files/Proj4Leaflet/proj4leaflet.js"></script>
-    <link href="ExamplePresentation_files/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
-    <script src="ExamplePresentation_files/leaflet-binding/leaflet.js"></script>
-    <link href="ExamplePresentation_files/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
-    <script src="ExamplePresentation_files/datatables-binding/datatables.js"></script>
-    <link href="ExamplePresentation_files/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <link href="ExamplePresentation_files/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
-    <script src="ExamplePresentation_files/dt-core/js/jquery.dataTables.min.js"></script>
-    <link href="ExamplePresentation_files/crosstalk/css/crosstalk.css" rel="stylesheet" />
-    <script src="ExamplePresentation_files/crosstalk/js/crosstalk.min.js"></script>
+    <script src="Slide_files/header-attrs/header-attrs.js"></script>
+    <link href="Slide_files/remark-css/default-fonts.css" rel="stylesheet" />
+    <link href="Slide_files/remark-css/default.css" rel="stylesheet" />
+    <script src="Slide_files/htmlwidgets/htmlwidgets.js"></script>
+    <script src="Slide_files/jquery/jquery.min.js"></script>
+    <link href="Slide_files/leaflet/leaflet.css" rel="stylesheet" />
+    <script src="Slide_files/leaflet/leaflet.js"></script>
+    <link href="Slide_files/leafletfix/leafletfix.css" rel="stylesheet" />
+    <script src="Slide_files/proj4/proj4.min.js"></script>
+    <script src="Slide_files/Proj4Leaflet/proj4leaflet.js"></script>
+    <link href="Slide_files/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+    <script src="Slide_files/leaflet-binding/leaflet.js"></script>
+    <link href="Slide_files/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+    <script src="Slide_files/datatables-binding/datatables.js"></script>
+    <link href="Slide_files/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="Slide_files/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+    <script src="Slide_files/dt-core/js/jquery.dataTables.min.js"></script>
+    <link href="Slide_files/crosstalk/css/crosstalk.css" rel="stylesheet" />
+    <script src="Slide_files/crosstalk/js/crosstalk.min.js"></script>
   </head>
   <body>
     <textarea id="source">
@@ -32,13 +32,14 @@ class: center, middle, inverse, title-slide
 ## Taller Manos a la Data <br/> Sesión 1
 ### Jose Laura
 ### Behavioral Economics &amp; Data Science Team, BEST
-### (updated: 2021-11-11)
+### (updated: 2021-11-14)
 
 ---
 
 background-image: url(imagen/BEST.png)
-background-size: cover
-
+&lt;!-- background-position: center --&gt;
+background-size: contain 
+&lt;!-- cover --&gt;
 ---
 
 class: center,middle
@@ -65,47 +66,76 @@ class: inverse, center, middle
 
 ---
 # Agenda
+&lt;!-- para presentacones incrementales --&gt;
 --
+.left-column[
+### Día 1
 
 * Motivación
---
-
 * Manos a la Data
---
-
 * Data Science
---
-
 * R y Rstudio
---
-
 * Paquetes necesarios
---
-
 * ¿Qué es web scraping?
---
-
 * Página web, sitio web, y aplicación web
---
-
 * Reto
+]
+--
+.right-column[
+.pull-left[
+
+### Día 2
+* Motivación
+* Manos a la Data
+* Data Science
+* R y Rstudio
+* Paquetes necesarios
+* ¿Qué es web scraping?
+* Página web, sitio web, y aplicación web
+* Reto
+]
+.pull-right[
+
+### Día 3
+* Motivación
+* Manos a la Data
+* Data Science
+* R y Rstudio
+* Paquetes necesarios
+* ¿Qué es web scraping?
+* Página web, sitio web, y aplicación web
+* Reto
+]
+]
 
 ---
 class: inverse, center
+
 # Motivación
  
  .center["No se puede elegir sabiamente una vida a menos que se atrava uno a escucharse a sí mismo a *su propio yo*, en cada momento de la vida. **ABRAHAM H. MASLOW** [The farther Reaches of Human Nature, 1971].]
 
 .pull-left[
-![](https://1.bp.blogspot.com/-EBTx-M7hLLg/X3UFZzk3_8I/AAAAAAAAAZY/_c86m_XTjWgUG-NyIcsP6mUIqpV7YLOwgCNcBGAsYHQ/s0/images.png)
+
+&lt;div class="figure"&gt;
+&lt;img src="https://1.bp.blogspot.com/-EBTx-M7hLLg/X3UFZzk3_8I/AAAAAAAAAZY/_c86m_XTjWgUG-NyIcsP6mUIqpV7YLOwgCNcBGAsYHQ/s0/images.png" alt="Fuente: Imagen 1" width="550px" height="400px" /&gt;
+&lt;p class="caption"&gt;Fuente: Imagen 1&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- ![](https://1.bp.blogspot.com/-EBTx-M7hLLg/X3UFZzk3_8I/AAAAAAAAAZY/_c86m_XTjWgUG-NyIcsP6mUIqpV7YLOwgCNcBGAsYHQ/s0/images.png) --&gt;
 ]
 
 .pull-right[
-![](imagen/MExtrinseca.png)
+&lt;div class="figure"&gt;
+&lt;img src="imagen/MExtrinseca.png" alt="Fuente: Imagen 2" width="550px" height="400px" /&gt;
+&lt;p class="caption"&gt;Fuente: Imagen 2&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- ![](imagen/MExtrinseca.png) --&gt;
 ]
 
 ---
-class: center, bottom, inverse
+class: center, middle, bottom, inverse
 
 
 # ¡Hay algo más para motivarse!
@@ -122,19 +152,33 @@ enseñar.
 + ¡Recuerden que también es importante ofrecer créditos!
 
 ---
+class: top
 # ¿Qué es Data Science?
 
 .pull-left[Data science is a set of fundamental principles that support and guide the principled extraction of information and knowledge from data. Possibly the most closely related concept to data science is data mining—the actual extraction of knowledge from data via technologies that incorporate these principles. There are hundreds of different data-mining algorithms, and a great deal of detail to the methods of the field. We argue that underlying all these many details is a much smaller and more concise set of fundamental principles [Van Der Aalst, W.](https://www.liebertpub.com/doi/full/10.1089/big.2013.1508) (2016). *Data science in action*. In Process mining (pp. 3-23). Springer, Berlin, Heidelberg.]
- 
-.pull-right[![Ciencia de datos en el contexto de procesos estrechamente relacionados en la organización.](https://www.liebertpub.com/cms/10.1089/big.2013.1508/asset/images/medium/figure1.gif)]
+
+--
+
+.pull-right[ 
+&lt;div class="figure"&gt;
+&lt;img src="https://www.liebertpub.com/cms/10.1089/big.2013.1508/asset/images/medium/figure1.gif" alt="Ciencia de datos en el contexto de procesos estrechamente relacionados en la organización" width="550px" height="450px" /&gt;
+&lt;p class="caption"&gt;Ciencia de datos en el contexto de procesos estrechamente relacionados en la organización&lt;/p&gt;
+&lt;/div&gt;
+]
 ---
 class: inverse, bottom, center, middle
 # ¿Ciencia de datos la profesión más sexy del siglo XXI?
-.pull-left[![](imagen/DSexyGlobalPais.png) ![](imagen/DSexyMundoContacto.png)]
 
-.pull-right[![](imagen/DSexyEconomista.png) ![](imagen/DSexyInfobae.png)]
+.pull-left[
+&lt;img src="imagen/DSexyGlobalPais.png" width="550px" height="200px" /&gt;&lt;img src="imagen/DSexyMundoContacto.png" width="550px" height="200px" /&gt;
+]
+--
+.pull-right[
+&lt;img src="imagen/DSexyEconomista.png" width="550px" height="200px" /&gt;&lt;img src="imagen/DSexyInfobae.png" width="550px" height="200px" /&gt;
+]
 
 ---
+class: center, middle
 # ¿Ciencia de datos la profesión más sexy del siglo XXI?
 
 
@@ -143,11 +187,13 @@ class: inverse, bottom, center, middle
 &lt;iframe width="741" height="417" src="https://www.youtube.com/embed/AaoM5XhdnG0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
 ---
-class: inverse, center, middle
+class: center, middle
 &lt;img src="https://cdn.proschoolonline.com/wp-content/uploads/2018/12/data-scientist-musthave-skills-1-1500x1139.jpg" width="750px" height="520px" style="display: block; margin: auto;" /&gt;
- 
+.footnote[
+Fuente: [Proschool](https://www.proschoolonline.com/blog/data-science-skills)
+]
 ##   ¿Qué habilidades debe tener un científico de datos?
-[Fuente: Proschool](https://www.proschoolonline.com/blog/data-science-skills)
+
 ---
 class: center, middle
 
@@ -268,7 +314,7 @@ plot(cars, pch = 19, col = 'darkgray', las = 1)
 abline(fit, lwd = 2)
 ```
 
-![](ExamplePresentation_files/figure-html/cars-1.svg)&lt;!-- --&gt;
+![](Slide_files/figure-html/cars-1.svg)&lt;!-- --&gt;
 
 ---
 
@@ -339,11 +385,7 @@ knitr::kable(head(iris), format = 'html')
 
 ---
 
-# HTML Widgets
-
-I have not thoroughly tested HTML widgets against **xaringan**. Some may work well, and some may not. It is a little tricky.
-
-Similarly, the Shiny mode (`runtime: shiny`) does not work. I might get these issues fixed in the future, but these are not of high priority to me. I never turn my presentation into a Shiny app. When I need to demonstrate more complicated examples, I just launch them separately. It is convenient to share slides with other people when they are plain HTML/JS applications.
+#     
 
 See the next page for two HTML widgets.
 
@@ -355,8 +397,8 @@ library(leaflet)
 leaflet() %&gt;% addTiles() %&gt;% setView(-93.65, 42.0285, zoom = 17)
 ```
 
-<div id="htmlwidget-6cce8b17ff27e3fa779d" style="width:100%;height:432px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6cce8b17ff27e3fa779d">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-fd6bfbf2f1495a47ab8a" style="width:100%;height:432px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fd6bfbf2f1495a47ab8a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
 
 ---
 
@@ -368,8 +410,8 @@ DT::datatable(
 )
 ```
 
-<div id="htmlwidget-b8bd382bcfac4d188f85" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b8bd382bcfac4d188f85">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a08ba52cb94819e54a00" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a08ba52cb94819e54a00">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 
@@ -770,6 +812,7 @@ The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yih
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
+"ratio": "16:9",
 "highlightStle": "github",
 "highlighLine": true,
 "countIncrementalSlides": true
